@@ -210,19 +210,19 @@ function iniciarSesion(codigo) {
     return;
   }
 
-  db.collection("usuarios")
-    .where("control", "==", codigo)
-    .limit(1)
-    .get()
-    .then(snapshot => {
-      if (snapshot.empty) {
-        alert("Empleado no registrado en local ni Firebase");
-        return;
-      }
-      const doc = snapshot.docs[0];
-      completarLogin(doc.id, codigo, doc.data(), "online");
-    })
-    .catch(() => alert("Sin internet y empleado no encontrado localmente"));
+db.collection("usuarios")
+  .get()
+  .then(snapshot => {
+    const doc = snapshot.docs.find(d =>
+      normalizarCodigo(d.data().control) === codigo
+    );
+    if (!doc) {
+      alert("Empleado no registrado en local ni Firebase");
+      return;
+    }
+    completarLogin(doc.id, codigo, doc.data(), "online");
+  })
+  .catch(() => alert("Sin internet y empleado no encontrado localmente"));
 }
 
 let buffer = "";
