@@ -1,7 +1,7 @@
 {
   "name": "Tienda IP - Premios",
   "short_name": "IP Premios",
-  "start_url": "/Catalogo/login.html",
+  "start_url": "/Catalogo/index.html",
   "scope": "/Catalogo/",
   "display": "standalone",
   "background_color": "#0f172a",
