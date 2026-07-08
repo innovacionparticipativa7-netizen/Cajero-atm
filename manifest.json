@@ -1,20 +1,20 @@
 {
-  "name": "Tienda IP - Premios",
-  "short_name": "IP Premios",
+  "name": "ATM IP",
+  "short_name": "ATM IP",
   "start_url": "/Cajero-atm/index.html",
-  "scope": "/Catalogo/",
+  "scope": "/Cajero-atm/",
   "display": "standalone",
   "background_color": "#0f172a",
   "theme_color": "#2563eb",
   "icons": [
     {
-      "src": "/Catalogo/Favicon.png",
+      "src": "/Cajero-atm/Favicon.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/Catalogo/logo.png",
+      "src": "/Cajero-atm/logo.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
