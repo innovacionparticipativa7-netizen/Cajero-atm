@@ -534,6 +534,15 @@ firebase.initializeApp({
 });
 
 const db = firebase.firestore();
+  db.enablePersistence({ synchronizeTabs: true }).catch(err => {
+  if (err.code === "failed-precondition") {
+    console.warn("Persistencia no disponible: múltiples pestañas abiertas sin sync");
+  } else if (err.code === "unimplemented") {
+    console.warn("Este navegador no soporta persistencia offline");
+  } else {
+    console.warn("Persistencia no disponible", err);
+  }
+});
 
 db.enablePersistence().catch(err => {
   console.warn("Persistencia no disponible", err);
